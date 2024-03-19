@@ -1,0 +1,94 @@
+<th:block th:fragment="sideBarFragment">
+    <div class="lsd-ring-container d-none">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="nav-bar">
+        <input id="nav-toggle" type="checkbox"/>
+        <div id="nav-header">
+            <a id="nav-title" class="ps-5" href="/home">
+                <img src="/img/logo_img.png" alt="Logo_Brand" width="100">
+            </a>
+            <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+            <hr/>
+        </div>
+        <div id="nav-content">
+            <a href="/account-information" class="nav-button account-information">
+                <i class="bi bi-person-badge-fill"></i>
+                <span>Account Information</span>
+            </a>
+            <hr>
+            <a href="/booked-ticket" class="nav-button booked-ticket">
+                <i class="bi bi-ticket-detailed"></i>
+                <span>Booked Ticket</span>
+            </a>
+            <hr>
+            <a href="/my-invoice" class="nav-button view-score">
+                <i class="bi bi-cash-coin"></i>
+                <span>Invoice</span>
+            </a>
+            <a sec:authorize="hasAnyRole('ADMIN' , 'EMPLOYEE')" href="/admin/ticket-manager" class="nav-button">
+                <i class="bi bi-ticket-perforated"></i>
+                <span>Ticket Manager</span>
+            </a>
+            <hr>
+            <a sec:authorize="hasRole('ADMIN')" href="/admin/promotion-management" class="nav-button">
+                <i class="bi bi-percent"></i>
+                <span>Promotion Manage</span>
+            </a>
+            <hr>
+            <a sec:authorize="hasRole('ADMIN')" href="/admin/schedule-management" class="nav-button">
+                <i class="bi bi-table"></i>
+                <span>Schedule Manage</span>
+            </a>
+            <a  sec:authorize="hasRole('ADMIN')" href="/admin/cinema-room" class="nav-button">
+                <i class="bi bi-door-closed"></i>
+                <span>Cinema Room Manage</span>
+            </a>
+            <a sec:authorize="hasRole('ADMIN')" href="/admin/employee-manager" class="nav-button">
+                <i class="bi bi-people-fill"></i>
+                <span>Employee Manager</span>
+            </a>
+            <a sec:authorize="hasRole('ADMIN')" href="/admin/movie-list" class="nav-button">
+                <i class="bi bi-film"></i>
+                <span>Movie Manage</span>
+            </a>
+
+
+
+            <!-- Empty Item, Add Item here if neccessary (Don't edit, just adding) -->
+            <!-- <div class="nav-button">
+                Adding here
+            </div>
+            <hr>
+            <div class="nav-button">
+                Adding here
+            </div>
+            <div class="nav-button">
+                Adding here
+            </div> -->
+            <div id="nav-content-highlight"></div>
+        </div>
+        <div id="nav-footer">
+            <div id="nav-footer-heading" class="justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div id="nav-footer-avatar">
+                        <img class="account-img" src="/img/user_img_default.png"/>
+                    </div>
+                    <div id="nav-footer-titlebox">
+                        <span id="nav-footer-title">-UserName-</span>
+                        <span id="nav-footer-subtitle">-Role-</span>
+                        <span id="nav-footer-score">Score: <span id="account-score">100</span> <i class="bi bi-coin"></i></span>
+                    </div>
+                </div>
+                <a href="/logout" class="me-3" title="Logout" style="cursor: pointer">
+                    <i class="bi bi-box-arrow-right text-light"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</th:block>

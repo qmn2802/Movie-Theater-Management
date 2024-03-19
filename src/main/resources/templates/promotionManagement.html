@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>CONFIRM BOOKING TICKET</title>
+    <!-- Required meta tags -->
+    <th:block th:replace="~{common/head :: headFragment}"></th:block>
+
+    <!--  Inject CSS -->
+    <link rel="stylesheet" href="/style/common_manager.css">
+    <link rel="stylesheet" href="/style/confirmTicket.css">
+</head>
+
+<style>
+    .invalid {
+        color: red;
+    }
+
+    .invalid input {
+        border-color: red;
+    }
+
+</style>
+
+<body>
+<div class="container-custom">
+    <div th:replace="~{common/sideBar :: sideBarFragment }"></div>
+    <div class="tab-content">
+        <div class="header">
+            <div>
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <h1>PROMOTION MANAGEMENT</h1>
+            </div>
+        </div>
+        <div class="main-content container p-5 ">
+            <div class="row mb-5">
+                <h3>Add a new promotion</h3>
+                <div>
+                    <button type="button" class="btn btn-danger add-new-promotion" data-bs-toggle="modal"
+                            data-bs-target="#modalAddPromotion">
+                        Add
+                    </button>
+                    <a type="button" class="btn btn-secondary">Delete Recently promotion</a>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <h3>Recently promotion</h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Promotion Adding Modal-->
+<div class="modal fade" id="modalAddPromotion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <h2 class="d-inline-block" id="staticBackdropLabel">Add New Promotion</h2>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row m-3 bg-body-secondary d-flex justify-content-around">
+                    <div class="col-4 mt-3 mb-3">
+                        <div class="side-img"><img src="/img/Movie/product_7.jpg" alt="bác sĩ lạ" class="img-fluid mt-2"
+                                                   style="max-width: 100%;"></div>
+                    </div>
+                    <div class="col-8 mt-3 mb-3">
+                        <form id="form-add-promotion">
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputImage" class="text-end col-sm-3 col-form-label"><b>Image:
+                                </b></label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" id="inputImage">
+                                </div>
+                            </div>
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputTitle" class="text-end col-sm-3 col-form-label"><b>Title:
+                                </b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputTitle">
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputStartTime" class="text-end col-sm-3 col-form-label"><b>Start
+                                    time:</b></label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" id="inputStartTime">
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputEndTime" class="text-end col-sm-3 col-form-label"><b>End time:
+                                </b></label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" id="inputEndTime">
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputDiscountLevel" class="text-end col-sm-3 col-form-label"><b>Discount
+                                    Level:
+                                </b></label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="inputDiscountLevel" max="100">
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <div class="row border-top border-dark-subtle m-2">
+                                <label for="inputDetails" class="text-end col-sm-3 col-form-label"><b>Detail:
+                                </b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputDetails">
+                                    <input type="hidden" id="inputId">
+                                    <span class="form-message"></span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Close
+                                </button>
+                                <button type="button" class="btn btn-danger" id="edit-promotion">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Bootstrap JavaScript Libraries -->
+<th:block th:replace="~{common/scriptFile :: scriptFragment}"></th:block>
+<!-- Inject js-->
+<script src="/js/common_get_account.js"></script>
+<script th:src="@{/js/validate.js}"></script>
+<script>
+    Validator({
+        form: '#form-edit-promotion',
+        errorSelector: '.form-message',
+        invalidClass: 'invalid',
+        rules: [
+            Validator.isRequired('#inputTitle'),
+            Validator.isRequired('#inputStartTime'),
+            Validator.isRequired('#inputEndTime'),
+            Validator.isRequired('#inputDiscountLevel'),
+            Validator.isRequired('#inputDetails'),
+        ]
+    });
+</script>
+<!-- Inject js-->
+<script src="/js/promotionManagement.js"></script>
+</body>
+
+</html>

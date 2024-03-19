@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Show Time</title>
+    <!-- Required meta tags -->
+    <th:block th:replace="~{common/head :: headFragment}"></th:block>
+
+    <!--  Inject CSS -->
+    <link rel="stylesheet" href="/style/common_manager.css">
+    <link rel="stylesheet" href="/style/showtime.css">
+</head>
+
+<body>
+    <div class="container-custom">
+        <div th:replace="~{common/sideBar :: sideBarFragment }"></div>
+
+        <div class="tab-content">
+            <div class="header">
+                <div>
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    <h1>SHOWTIME</h1>
+                </div>
+            </div>
+            <div class="main-content container p-5 ">
+                <div class="row">
+                    <!-- sửa ở đây  -->
+                    <div class="row justify-content-around">
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                        <button class="button-showtime col text-center mx-3"> <span>20/11/2023</span></button>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="row m-3 bg-body-secondary">
+                            <div class="col-2 mt-3 mb-3">
+                                <a href="#"><img src="/img/Movie/product_7.jpg" alt="bác sĩ lạ" class="img-fluid"></a>
+                            </div>
+                            <div class="col-10 mt-3 mb-3">
+                                <a href="#" class="text-decoration-none" >
+                                    <h1 class="text-secondary-emphasis">Docter Strange: Phù thủy tối thượng</h1>
+                                </a>
+                                <h5>Docter Strange</h5>
+                                <button class="button-clock m-2">
+                                    8:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    9:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    14:30
+                                </button>
+                                <button class="button-clock m-2">
+                                    15:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    17:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    18:30
+                                </button>
+                                <button class="button-clock m-2">
+                                    19:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    20:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    21:00
+                                </button>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row m-3 bg-body-secondary">
+                            <div class="col-2 mt-3 mb-3">
+                                <a href="#"><img src="/img/Movie/product_7.jpg" alt="bác sĩ lạ" class="img-fluid"></a>
+                            </div>
+                            <div class="col-10 mt-3 mb-3">
+                                <a href="#" class="text-decoration-none" >
+                                    <h1 class="text-secondary-emphasis">Docter Strange: Phù thủy tối thượng</h1>
+                                </a>
+                                <h5>Docter Strange</h5>
+                                <button class="button-clock m-2">
+                                    8:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    9:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    14:30
+                                </button>
+                                <button class="button-clock m-2">
+                                    15:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    17:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    18:30
+                                </button>
+                                <button class="button-clock m-2">
+                                    19:00
+                                </button>
+                                
+                                
+                            </div>
+                        </div>
+
+                        <div class="row m-3 bg-body-secondary">
+                            <div class="col-2 mt-3 mb-3">
+                                <a href="#"><img src="/img/Movie/product_7.jpg" alt="bác sĩ lạ" class="img-fluid"></a>
+                            </div>
+                            <div class="col-10 mt-3 mb-3">
+                                <a href="#" class="text-decoration-none" >
+                                    <h1 class="text-secondary-emphasis">Docter Strange: Phù thủy tối thượng</h1>
+                                </a>
+                                <h5>Docter Strange</h5>
+                                <button class="button-clock m-2">
+                                    8:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    9:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    14:30
+                                </button>
+                                <button class="button-clock m-2">
+                                    15:00
+                                </button>
+                                <button class="button-clock m-2">
+                                    17:00
+                                </button>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <th:block  th:replace="~{common/scriptFile :: scriptFragment}"></th:block >
+    <!-- Inject js-->
+    <script src="/js/common_get_account.js"></script>
+    <!-- Inject js-->
+</body>
+
+</html>

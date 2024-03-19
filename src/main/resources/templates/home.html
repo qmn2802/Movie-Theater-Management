@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Netflex</title>
+    <!-- Required meta tags -->
+    <th:block th:replace="~{common/head :: headFragment}"></th:block>
+    <!-- Inject CSS -->
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/home.css">
+</head>
+
+<body>
+<div th:replace="~{common/header :: headerFragment}"></div>
+<main>
+    <div id="carouselExampleIndicators" class="carousel slide master-slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">
+                    <img width="100%" src="/img/banner_1.png" alt="">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img width="100%" src="/img/banner_2.png" alt="">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img width="100%" src="/img/banner_3.png" alt="">
+                </a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="list-current-movie bg-dark">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center rounded mt-3 py-2" style="color: white;">
+                    Movies now playing
+                </h2>
+            </div>
+            <div class="row flex-wrap" id="movie-items">
+                <div class="col-xl-3 col-lg-4 col-6 p-3">
+                    <div class="card border-dark rounded bg-dark" style="width: 100%;">
+                        <img src="/img/Movie/product_1.jpg" class="rounded bg-dark movie-small-img" style="width: 100%;"
+                             alt="">
+                        <div class="card-body bg-dark text-light px-0">
+                            <h3 class="card-title  fw-bold movie-name">À Há MAN</h3>
+                            <p class="card-text pt-2" style="font-size: .8rem;">
+                                Type:
+                                <span class="fw-bold movie-type">Hài Viễn Tưởng</span>
+                            </p>
+                            <div class="pb-3 d-flex flex-wrap movie-attribute">
+                                <button type="button" class="btn btn-danger me-2 fw-bold">18+</button>
+                                <button type="button" class="btn btn-success me-2 fw-bold">2D</button>
+                                <button type="button"
+                                        class="btn btn-outline-warning me-2 fw-bold">Description
+                                </button>
+                            </div>
+                            <a class="button-63 rounded fw-bold text-light w-75 but-ticket" role="button">Buy Ticket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-6 p-3">
+                    <div class="card border-dark rounded bg-dark" style="width: 100%;">
+                        <img src="/img/Movie/product_1.jpg" class="rounded bg-dark movie-small-img" style="width: 100%;"
+                             alt="">
+                        <div class="card-body bg-dark text-light px-0">
+                            <h3 class="card-title  fw-bold movie-name">À Há MAN</h3>
+                            <p class="card-text pt-2" style="font-size: .8rem;">
+                                Type:
+                                <span class="fw-bold movie-type">Hài Viễn Tưởng</span>
+                            </p>
+                            <div class="pb-3 d-flex flex-wrap movie-attribute">
+                                <button type="button" class="btn btn-danger me-2 fw-bold">18+</button>
+                                <button type="button" class="btn btn-success me-2 fw-bold">2D</button>
+                                <button type="button"
+                                        class="btn btn-outline-warning me-2 fw-bold">Description
+                                </button>
+                            </div>
+                            <a class="button-63 rounded fw-bold text-light w-75 but-ticket" role="button">Buy Ticket</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="modal fade" id="select-movie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content" style=" font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+            <div class="modal-header d-flex justify-content-center header-login bg-dark p-3"
+                 style="border-top-right-radius: 6px;border-top-left-radius: 6px;">
+                <img src="/img/logo_img.png" style="width: 150px;" alt="">
+            </div>
+
+            <div class="modal-body body-login p-4 d-flex ">
+                <div class="px-4 mb-3 col-3">
+                    <div class="d-flex justify-content-between my-2 flex-column align-items-center">
+                        <img src="/img/Movie/product_4.jpg" style="width: 90%"/>
+                        <h3 class="fw-bold mt-3" id="modal-head">Movie Name</h3>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="mb-3">
+                        <h4 class="mb-4">Select Date</h4>
+                        <div class="container-date">
+                            <form  id="container-date">
+                                <label class="me-3">
+                                    <input type="radio" name="radio" checked="">
+                                    <span>--/--/----</span>
+                                </label>
+                                <label class="me-3">
+                                    <input type="radio" name="radio">
+                                    <span>--/--/----</span>
+                                </label>
+                                <label class="me-3">
+                                    <input type="radio" name="radio">
+                                    <span>--/--/----</span>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h4>Select Time</h4>
+                        <div class="container-time">
+                            <form id="container-time">
+                                <label class="me-3">
+                                    <input type="radio" name="radio" checked="">
+                                    <span>--:--</span>
+                                </label>
+                                <label class="me-3">
+                                    <input type="radio" name="radio">
+                                    <span>--:--</span>
+                                </label>
+                                <label class="me-3">
+                                    <input type="radio" name="radio">
+                                    <span>--:--</span>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h4 class="p-0">Select Seat</h4>
+                        <div id="seat-item" class="py-3" style="overflow-x: scroll">
+                            <div class="d-flex">
+                                <div class="checkbox-wrapper-10 mb-2  me-2">
+                                    <input type="checkbox" id="none-seat" class="tgl tgl-flip">
+                                    <label for="none-seat" data-tg-on="--" data-tg-off="--" class="tgl-btn"></label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="p-0">Total: <span id="money">00.0</span> vnđ</h5>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-dark me-2 mb-2 fw-bold" id="booking-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div th:replace="~{common/footer :: footerFragment}"></div>
+<!-- Bootstrap JavaScript Libraries -->
+<th:block th:replace="~{common/scriptFile :: scriptFragment}"></th:block>
+<!-- Inject js-->
+<script src="/js/common_customer_page.js"></script>
+<script src="/js/home.js"></script>
+</body>
+
+</html>
